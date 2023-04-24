@@ -1,0 +1,21 @@
+.header, .welcome, .main-section {
+    border-bottom: 2px solid #2ec12e;
+}
+.welcome {
+    border-bottom: 2px solid #2ec12e;
+}
+.btn-primary {
+    background-color: #2ec12e;
+}
+.text {
+    color: white;
+    border-radius: 20px;
+    padding: 5%;
+    background: #2ec12e;
+    height: 100%;
+    align-items: center;
+    vertical-align: middle;
+}
+.smth {
+    border-radius: 20px;
+}
