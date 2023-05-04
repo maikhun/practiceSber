@@ -13,14 +13,19 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "id_credit")
-    private Integer idCredit;
+    @Column(name="date")
+    private Date date;
 
-    @Column(name = "date")
-    private Date dateOfPayment;
+    @Column(name="amount")
+    private BigDecimal amount;
 
-    @Column(name = "amount")
-    private BigDecimal amountOfPayment;
+    protected Payment() {
+    }
+
+    public Payment(Date date, BigDecimal amount) {
+        this.date = date;
+        this.amount = amount;
+    }
 
     public Integer getId() {
         return id;
@@ -30,27 +35,19 @@ public class Payment {
         this.id = id;
     }
 
-    public Integer getIdCredit() {
-        return idCredit;
+    public Date getDate() {
+        return date;
     }
 
-    public void setIdCredit(Integer idCredit) {
-        this.idCredit = idCredit;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Date getDateOfPayment() {
-        return dateOfPayment;
+    public BigDecimal getAmount() {
+        return amount;
     }
 
-    public void setDateOfPayment(Date dateOfPayment) {
-        this.dateOfPayment = dateOfPayment;
-    }
-
-    public BigDecimal getAmountOfPayment() {
-        return amountOfPayment;
-    }
-
-    public void setAmountOfPayment(BigDecimal amountOfPayment) {
-        this.amountOfPayment = amountOfPayment;
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 }

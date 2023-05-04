@@ -2,27 +2,35 @@ package com.sbertech.credit_payment.models;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
 
 @Entity
 @Table(name = "client")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "fullName")
     private String fullName;
 
-    @Column(name="personalAccount")
-    private ArrayList<String> personalAccounts;
+    @Column(name = "personalAccount")
+    private Set<String> personalAccount;
 
-    public Integer getId() {
+    protected Client() {}
+
+    public Client(String fullName, String[] personalAccount) {
+        this.fullName = fullName;
+        this.personalAccount = Set.of(personalAccount);
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -34,11 +42,11 @@ public class Client {
         this.fullName = fullName;
     }
 
-    public ArrayList<String> getPersonalAccounts() {
-        return personalAccounts;
+    public Set<String> getPersonalAccount() {
+        return personalAccount;
     }
 
-    public void setPersonalAccounts(String[] personalAccounts) {
-        this.personalAccounts = new ArrayList<>(List.of(personalAccounts));
+    public void setPersonalAccount(Set<String> personalAccount) {
+        this.personalAccount = personalAccount;
     }
 }

@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ContractController {
 
-    @Autowired
-    private CreditRepo creditRepos;
     @GetMapping("/contracts")
     public String getPage(){
         return "contracts";
