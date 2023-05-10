@@ -1,11 +1,10 @@
 package com.sbertech.credit_payment.repos;
 
-
-import com.sbertech.credit_payment.models.Credit;
+import com.sbertech.credit_payment.models.Client;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CreditRepo extends CrudRepository<Credit, Long> {
-
+public interface ClientRepo extends CrudRepository<Client, Long> {
+    Client findClientByFullName(String fullName);
 }

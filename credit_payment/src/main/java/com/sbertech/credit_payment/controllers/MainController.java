@@ -12,6 +12,7 @@ public class MainController {
     public String getAuthorization(){
         return "authorization";
     }
+
     @GetMapping("/index")
     public String getMainPage(){
         return "index";
