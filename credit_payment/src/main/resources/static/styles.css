@@ -19,3 +19,11 @@
 .smth {
     border-radius: 20px;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background: white;
+    color: rgba(38,38,38,.55);
+    justify-content: center;
+}

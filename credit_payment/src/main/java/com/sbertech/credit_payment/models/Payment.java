@@ -11,43 +11,43 @@ public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long paymentId;
 
-    @Column(name="date")
-    private Date date;
+    @Column(name="paymentDate")
+    private Date paymentDate;
 
-    @Column(name="amount")
-    private BigDecimal amount;
+    @Column(name="paymentAmount")
+    private BigDecimal paymentAmount;
 
-    protected Payment() {
+    public Payment() {
     }
 
-    public Payment(Date date, BigDecimal amount) {
-        this.date = date;
-        this.amount = amount;
+    public Payment(Date paymentDate, BigDecimal paymentAmount) {
+        this.paymentDate = paymentDate;
+        this.paymentAmount = paymentAmount;
     }
 
-    public Integer getId() {
-        return id;
+    public Long getPaymentId() {
+        return paymentId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPaymentId(Long paymentId) {
+        this.paymentId = paymentId;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public BigDecimal getAmount() {
-        return amount;
+    public BigDecimal getPaymentAmount() {
+        return paymentAmount;
     }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
+    public void setPaymentAmount(BigDecimal paymentAmount) {
+        this.paymentAmount = paymentAmount;
     }
 }

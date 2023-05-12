@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public class ClientServiceImpl implements ClientService {
-    @Autowired
+
     private final ClientRepo clientRepository;
 
     public ClientServiceImpl(ClientRepo clientRepository) {
@@ -20,11 +20,6 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<Client> findAllClients() {
         return (List<Client>) clientRepository.findAll();
-    }
-
-    @Override
-    public Client findClientByFullName(String name) {
-        return clientRepository.findClientByFullName(name);
     }
 
     @Override
@@ -47,8 +42,4 @@ public class ClientServiceImpl implements ClientService {
         clientRepository.deleteById(id);
     }
 
-    @Override
-    public void deleteClientByFullName(String name) {
-
-    }
 }
