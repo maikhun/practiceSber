@@ -11,42 +11,67 @@ import java.util.Set;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long clientId;
 
-    @Column(name = "fullName")
-    private String fullName;
+    @Column(name = "clientName")
+    private String clientName;
 
-    @Column(name = "personalAccount")
-    private Set<String> personalAccount;
+    @Column(name = "clientPersonalAccount")
+    private String personalAccount;
 
-    protected Client() {}
+    @Column(name = "clientStatus")
+    private boolean clientStatus;
 
-    public Client(String fullName, String[] personalAccount) {
-        this.fullName = fullName;
-        this.personalAccount = Set.of(personalAccount);
+    @Column(name = "clientPassword")
+    private String password;
+
+    protected Client() {
     }
 
-    public Long getId() {
-        return id;
+    public Client(String clientName, String personalAccount, String password) {
+        this.clientName = clientName;
+        this.personalAccount = personalAccount;
+        this.clientStatus = true;
+        this.password = password;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public String getFullName() {
-        return fullName;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public String getClientName() {
+        return clientName;
     }
 
-    public Set<String> getPersonalAccount() {
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    public String getPersonalAccount() {
         return personalAccount;
     }
 
-    public void setPersonalAccount(Set<String> personalAccount) {
+    public void setPersonalAccount(String personalAccount) {
         this.personalAccount = personalAccount;
+    }
+
+    public boolean isClientStatus() {
+        return clientStatus;
+    }
+
+    public void setClientStatus(boolean clientStatus) {
+        this.clientStatus = clientStatus;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

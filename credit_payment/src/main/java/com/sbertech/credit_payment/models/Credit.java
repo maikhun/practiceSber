@@ -10,31 +10,30 @@ import java.util.Date;
 public class Credit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long creditId;
 
-    @Column(name="amount")
-    private BigDecimal amount;
+    @Column(name="creditAmount")
+    private BigDecimal creditAmount;
 
-    protected Credit() {
+    protected Credit() {}
+
+    public Credit(BigDecimal creditAmount) {
+        this.creditAmount = creditAmount;
     }
 
-    public Credit(BigDecimal amount) {
-        this.amount = amount;
+    public Long getCreditId() {
+        return creditId;
     }
 
-    public Long getId() {
-        return id;
+    public void setCreditId(Long creditId) {
+        this.creditId = creditId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public BigDecimal getCreditAmount() {
+        return creditAmount;
     }
 
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
+    public void setCreditAmount(BigDecimal creditAmount) {
+        this.creditAmount = creditAmount;
     }
 }

@@ -7,30 +7,37 @@ import java.util.Date;
 @Entity
 @Table(name="contract")
 public class Contract {
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long contractId;
 
-    @Column(name="id_client")
-    private Integer idClient;
-
-    @Column(name="name")
+    @Column(name="contractName")
     private String name;
 
-    @Column(name="term")
+    @Column(name="contractTerm")
     private String termOfContract;
 
-    @Column(name="dateStart")
+    @Column(name="contractDateStart")
     private Date dateOfStart;
 
-    public Integer getIdClient() {
-        return idClient;
+    @Column(name="contractStatus")
+    private Boolean contractStatus;
+
+    protected Contract() {}
+
+    public Contract(String name, String termOfContract, Date dateOfStart) {
+        this.name = name;
+        this.termOfContract = termOfContract;
+        this.dateOfStart = dateOfStart;
+        this.contractStatus = true;
     }
 
-    public void setIdClient(Integer idClient) {
-        this.idClient = idClient;
+    public Long getContractId() {
+        return contractId;
+    }
+
+    public void setContractId(Long contractId) {
+        this.contractId = contractId;
     }
 
     public String getName() {
@@ -57,4 +64,11 @@ public class Contract {
         this.dateOfStart = dateOfStart;
     }
 
+    public Boolean getContractStatus() {
+        return contractStatus;
+    }
+
+    public void setContractStatus(Boolean contractStatus) {
+        this.contractStatus = contractStatus;
+    }
 }
